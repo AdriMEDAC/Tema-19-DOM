@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Document</title>
+    </head>
+    <body>
+        <h1 id="titulo">Título: </h1>
+        <h2 id="seccion1">Sección 1: </h2>
+        <h2 id="seccion2">Sección 2: </h2>
+        <hr>
+        <h3>Introduce el título: </h3>
+        <form>
+            <textarea type="text1" id="titulo2"></textarea><br>
+        </form>
+        <h3>Introduce la Sección 1: </h3>
+        <form>
+            <textarea type="text2" id="s1"></textarea><br>
+        </form>
+        <h3>Introduce la Sección 2: </h3>
+        <form>
+            <textarea type="text3" id="s2"></textarea><br>
+        </form>
+        <input type="reset" value="cambiar" onclick="AgregarTitulo() + AgregarSeccion1() + AgregarSeccion2()">
+        <script>
+            function AgregarTitulo()
+            {
+                var tituloOriginal = document.getElementById("titulo");
+                var tituloIntroducido = document.getElementById("titulo2");
+                var text1 = document.createTextNode(" " + tituloIntroducido.value);
+                tituloOriginal.appendChild(text1);
+            }
+            function AgregarSeccion1()
+            {
+                var seccion1Original = document.getElementById("seccion1");
+                var seccion1Introducida = document.getElementById("s1");
+                var text2 = document.createTextNode(" " + seccion1Introducida.value);
+                seccion1Original.appendChild(text2);
+            }
+            function AgregarSeccion2()
+            {
+                var seccion2Original = document.getElementById("seccion2");
+                var seccion2Introducida = document.getElementById("s2");
+                var text3 = document.createTextNode(" " + seccion2Introducida.value);
+                seccion2Original.appendChild(text3);
+            }
+        </script>
+    </body>
+</html>

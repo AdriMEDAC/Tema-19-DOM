@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Document</title>
+    </head>
+    <body>
+        <h1 id="titulo">Este es el titulo que vamos a cambiar.</h1>
+
+        <p>Puedes modificar el título, introduciendo el nuevo título en el campo de texto y pulsando el botón de cambiar título</p>
+
+        <form>
+            <input type="text" id="nuevoTitulo1">
+        </form>
+        <input type="button" value="cambiar" onclick="cambiarTitulo()">
+        <script>
+            function cambiarTitulo()
+            {
+                var nuevoTitulo = document.getElementById("nuevoTitulo1").value;
+                var nodo = document.createTextNode(nuevoTitulo);
+                titulo.innerHTML='';
+                titulo.appendChild(nodo);
+            }
+        </script>
+    </body>
+</html>
