@@ -5,46 +5,47 @@
     <title>Document</title>
 </head>
     <body>
-        <h1>Añade párrafos</h1>
+        <h1>Crea un titulo y dos secciones</h1>
+        <hr>
+        <div id="contenedor"></div>
 
-        <h2><div id="tit"></div></h2>
-        <h4><div id="sc1"></div></h4>
-        <h4><div id="sc2"></div></h4>
-
-        <form>
-            <textarea type="texto" id="titulo" placeholder="Título"></textarea><br>
+        <form action="">
+            <h3>Introduce el titulo:</h3>
+            <textarea name="" id="titulo" placeholder="Título"></textarea>
+            <h3>Introduce la sección 1:</h3>
+            <textarea name="" id="sec1" placeholder="Primera sección"></textarea>
+            <h3>Introduce la sección 2:</h3>
+            <textarea name="" id="sec2" placeholder="Segunda sección"></textarea>
+            <br>
+            <input type="reset" name="" id="" value="Rellenar" onclick="rellenar()">
         </form>
-
-        <p>Introduce la sección 1:</p>
-
-        <form>
-            <textarea type="texto" id="sec1" placeholder="Primera sección"></textarea><br>
-        </form>
-
-        <p>Introduce la sección 2:</p>
-
-        <form>
-            <textarea type="texto" id="sec2" placeholder="Segunda sección"></textarea><br>
-        </form>
-
-        <button type="button" onclick="rellenar()">Rellenar</button>
 
         <script>
-            function rellenar(){
-                var titulo = document.getElementById("titulo").value;
-                var nuevoT = document.createElement("t");
-                nuevoT.textContent = titulo;
-                document.getElementById("tit").appendChild(nuevoT);
-                var seccion1 = document.getElementById("sec1").value;
-                var nuevoS = document.createElement("s1");
-                nuevoS.textContent = seccion1;
-                document.getElementById("sc1").appendChild(nuevoS);
-                var seccion2 = document.getElementById("sec2").value;
-                var nuevoS2 = document.createElement("s2");
-                nuevoS2.textContent = seccion2;
-                document.getElementById("sc2").appendChild(nuevoS2);
+            function rellenar()
+            {
+                var nuevoT = document.createElement('h1');
+                var titulo = document.getElementById('titulo').value;
+                var nodoTit = document.createTextNode("Titulo: " + titulo);
+                nuevoT.appendChild(nodoTit);
+                
+                var nSeccion1 = document.createElement('h3');
+                var sc1 = document.getElementById('sec1').value;
+                var nodoSec1 = document.createTextNode("Sección 1: " + sc1);
+                nSeccion1.appendChild(nodoSec1);
+
+                var nSeccion2 = document.createElement('h3');
+                var sc2 = document.getElementById('sec2').value;
+                var nodoSec2 = document.createTextNode("Sección 2: " + sc2);
+                nSeccion2.appendChild(nodoSec2);
+
+                var contenedor = document.getElementById('contenedor');
+
+                contenedor.innerHTML = '';
+
+                contenedor.appendChild(nuevoT);
+                contenedor.appendChild(nSeccion1);
+                contenedor.appendChild(nSeccion2);
             }
         </script>
-
     </body>
 </html>
