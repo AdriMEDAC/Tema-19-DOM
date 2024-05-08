@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Document</title>
+    </head>
+    <body>
+        <h1>Añade Párrafos</h1><br>
+
+        <ul id="lista">
+
+        </ul>
+
+            <input type="text" id="nuevoParrafo">
+            <button onclick="agregarParrafo()">Añadir Parrafo</button>
+        <script>
+            function agregarParrafo()
+            {
+                let nuevoTexto = document.getElementById("nuevoParrafo");
+                if (nuevoTexto == "")
+                {
+                    alert("Ingresa párrafo");
+                    return;
+                }
+                let texto = document.createElement("ul");
+                parrafo.textContent = nuevoTexto;
+                document.getElementById("lista").appendChild(parrafo);
+            }
+        </script>
+    </body>
+</html>
