@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+    <body>
+        <h1>Tabla de clasificaciones</h1>
+
+        <table border="1" id="tabla">
+            <thead>
+                <tr>
+                    <th>Alumno</th>
+                    <th>Calificación</th>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+        
+        <p>Nombre del alumno: </p>
+        <textarea  id="nombre" placeholder="Nombre"></textarea><br>
+
+        <p>Calificación: </p>
+        <textarea id="nota" placeholder="Nota"></textarea><br>
+
+        <input value="Añadir elemento" type="reset" onclick="nuevaFila()">
+
+        <script>
+            function nuevaFila(){
+                var nombreAlumno = document.getElementById("nombre").value;
+                var notaAlumno = document.getElementById("nota").value;
+
+                var fila = document.createElement("tr");
+                var celdaNombre = document.createElement("td");
+                var nodoNombre = document.createTextNode(nombreAlumno);
+                var celdaNota = document.createElement("td");
+                var nodoNota = document.createTextNode(notaAlumno);
+
+                celdaNombre.appendChild(nodoNombre);
+                celdaNota.appendChild(nodoNota);
+                
+                fila.appendChild(celdaNombre);
+                fila.appendChild(celdaNota);
+
+                tabla.appendChild(fila);
+            }
+        </script>
+    </body>
+</html>
