@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+    <body>
+        <h1>Añade nuevos elementos a la lista cada vez que se pulsa el botón:</h1>
+        <hr>
+        <h3>Lista de clase:</h3>
+        <ul id="list"></ul>
+
+        <form action="">
+            <h3>Nombre:</h3>
+            <textarea name="" id="nombre" placeholder="Título"></textarea>
+            <br>
+            <input type="reset" name="" id="" value="Rellenar" onclick="rellenarLista()">
+        </form>
+
+        <script>
+            function rellenarLista()
+            {
+                var nNombre = document.createElement('li');
+                var name = document.getElementById('nombre').value;
+                var nodoNombre = document.createTextNode(name);
+                nNombre.appendChild(nodoNombre);
+
+                var list = document.getElementById('list');
+
+                list.appendChild(nNombre);
+            }
+        </script>
+    </body>
+</html>
