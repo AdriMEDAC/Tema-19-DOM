@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>R2_E7</title>
+    <script>
+        function BorrarTitulo() 
+        {
+        document.getElementById("titulo").style.display = "none";
+        }
+
+        function AnadirTitulo() 
+        {
+        document.getElementById("titulo").style.display = "block";
+        }
+
+    </script>
+</head>
+<body>
+    <h1 id="titulo">Hola mundo</h1>
+    <p>Haz click para eliminar el titulo o añadirlo de nuevo</p>
+    <button onclick="BorrarTitulo()">Borrar</button>
+    <button onclick="AnadirTitulo()">Añadir</button>
+</body>
+</html>

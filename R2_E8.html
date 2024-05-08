@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>R2_E8</title>
+</head>
+<body>
+    <div>
+        <h1 id="titulo">Este es el título que vamos a cambiar</h1>
+    </div>
+    
+    <p>Puedes modificar el título, introduciendo el nuevo título en el cambo de texto y pulsando el botón cambiar título</p>
+    <form name="formulario">
+        <textarea cols="50" rows="2"  id="nuevoTitulo" placeholder="Nuevo título"></textarea><br>
+        <input type="reset" value="Cambiar título" onclick="cambiarTitulo()">
+    </form>
+    
+    <script>
+        function cambiarTitulo()
+        {
+            var nuevo= document.createElement("h1");
+            var titulo_nuevo= document.getElementById("nuevoTitulo");
+            var texto= document.createTextNode(nuevoTitulo.value);
+            nuevo.appendChild(texto);
+            var titulo_antiguo= document.getElementById("titulo");
+            var padre= titulo_antiguo.parentNode;
+            padre.replaceChild(nuevo, titulo_antiguo);
+        }
+    </script>
+</body>
+</html>

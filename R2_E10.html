@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>R2_E10</title>
+</head>
+<body>
+    <h1>Añade casillas a la tabla</h1>
+
+    <table border = "1" id="tablaCalificaciones">
+        <thead>
+            <tr>
+                <th>Alumno</th>
+                <th>Calificación</th>
+            </tr>
+        </thead>
+        <tbody id="lista">
+        </tbody>
+    </table>
+    
+    <p>Nombre del alumno: </p>
+    <textarea cols="50" rows="2" id="nombre" placeholder="Nombre"></textarea><br>
+
+    <p>Calificación: </p>
+    <textarea cols="50" rows="2" id="cal" placeholder="Nota"></textarea><br>
+
+    <button type="button" onclick="nuevoEl()">Añadir elemento</button>
+    <button type="button" onclick="borrarEl()">Borrar elemento</button>
+
+    <script>
+        function nuevoEl()
+        {
+            var nombre = document.getElementById("nombre").value;
+            var calificacion = document.getElementById("cal").value;
+
+            var fila = document.createElement("tr");
+            var celdaNombre = document.createElement("td");
+            var celdaCalificacion = document.createElement("td");
+
+            celdaNombre.textContent = nombre;
+            celdaCalificacion.textContent = calificacion;
+
+            fila.appendChild(celdaNombre);
+            fila.appendChild(celdaCalificacion);
+
+            document.getElementById("tablaCalificaciones").getElementsByTagName('tbody')[0].appendChild(fila);
+        }
+        function borrarEl()
+        {
+            var lista = document.getElementById("lista");
+            var prim = lista.firstElementChild;
+
+            lista.removeChild(prim);
+        }
+    </script>
+</body>
+</html>

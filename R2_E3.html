@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>R2_Ej3</title>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() 
+        {
+            var ulElement = document.querySelector("ul");
+            var listaContenido = [];
+            var liElements = ulElement.getElementsByTagName("li");
+            for (let i = 0; i < liElements.length; i++) 
+            {
+                var contenido = liElements[i].textContent;
+                listaContenido.push(contenido);
+            }
+            document.write("Contenido de la lista:", listaContenido);
+        });
+    </script>
+</head>
+<body>
+    <ul>
+        <li>Patatas</li>
+        <li>Calabazas</li>
+        <li>Kiwis</li>
+    </ul>
+</body>
+</html>

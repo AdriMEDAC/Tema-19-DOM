@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>R2_Ej6</title>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() 
+        {
+            var elementoHijo = document.getElementById("li");
+            var elementoPadre = elementoHijo.parentNode;
+
+            function borrarElemento() {
+                console.log("Elemento borrado"); 
+                elementoPadre.removeChild(elementoHijo);
+            }
+
+            function anadirElemento() 
+            {
+                const elementosLista = elementoPadre.getElementsByTagName("li");
+                let patatasExiste = false;
+                for (let i = 0; i < elementosLista.length; i++) {
+                    if (elementosLista[i].textContent === "Patatas") {
+                        patatasExiste = true;
+                        break;
+                    }
+                }
+
+                if (patatasExiste) 
+                {
+                    console.log("El elemento 'Patatas' ya está añadido.");
+                } else {
+                    var nuevoElemento = document.createElement("li");
+                    nuevoElemento.textContent = elementoHijo.textContent;
+                    elementoPadre.insertBefore(elementoHijo, elementoPadre.firstChild);
+                    nuevoElemento.id = "li";
+                    console.log("Elemento añadido");
+                }
+            }
+            document.getElementById("botonBorrar").onclick = borrarElemento;
+            document.getElementById("botonAnadir").onclick = anadirElemento;
+        });
+    </script>
+</head>
+<body>
+    <ul>
+        <li id="li">Patatas</li>
+        <li>Calabazas</li>
+        <li>Kiwis</li>
+    </ul>
+    <p>Haz click para eliminar el elemento "li" con id="li" o para añadirlo una vez borrado</p>
+    <button id="botonBorrar">Borrar</button>
+    <button id="botonAnadir">Añadir</button>
+</body>
+</html>

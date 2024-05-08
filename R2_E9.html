@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>R2_E9</title>
+</head>
+<body>
+    <h1>Añade párrafos</h1>
+
+    <div id="contenedor"></div>
+
+    <textarea cols="50" rows="2" id="parrafo" placeholder="Nuevo párrafo"></textarea><br>
+    <button type="button" onclick="nuevoParrafo()">Añadir párrafo</button>
+    <button type="button" onclick="borrarParrafo()">Borrar párrafo</button>
+
+    <script>
+        function nuevoParrafo()
+        {
+            var textoParrafo = document.getElementById("parrafo").value;
+            var nuevoP = document.createElement("p");
+            nuevoP.textContent = textoParrafo;
+            document.getElementById("contenedor").appendChild(nuevoP);
+        }
+        function borrarParrafo()
+        {
+            var contParrafo = document.getElementById("contenedor")
+            var primParrarfo = contParrafo.firstElementChild;
+
+            contParrafo.removeChild(primParrarfo);
+        }
+    </script>
+
+</body>
+</html>

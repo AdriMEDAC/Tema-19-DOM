@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>R2_Ej5</title>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() 
+        {
+            const elementoHijo = document.getElementById("li");
+            const elementoPadre = elementoHijo.parentNode;
+            elementoPadre.removeChild(elementoHijo);
+        });
+    </script>
+</head>
+<body>
+    <ul>
+        <li id="li">Patatas</li>
+        <li>Calabazas</li>
+        <li>Kiwis</li>
+    </ul>
+</body>
+</html>
