@@ -27,22 +27,19 @@
             {
                 var tituloOriginal = document.getElementById("titulo");
                 var tituloIntroducido = document.getElementById("titulo2");
-                var text1 = document.createTextNode(" " + tituloIntroducido.value);
-                tituloOriginal.appendChild(text1);
+                tituloOriginal.textContent = "Titulo: " + tituloIntroducido.value;
             }
             function AgregarSeccion1()
             {
                 var seccion1Original = document.getElementById("seccion1");
                 var seccion1Introducida = document.getElementById("s1");
-                var text2 = document.createTextNode(" " + seccion1Introducida.value);
-                seccion1Original.appendChild(text2);
+                seccion1Original.textContent = "Sección 1: " + seccion1Introducida.value;
             }
             function AgregarSeccion2()
             {
                 var seccion2Original = document.getElementById("seccion2");
                 var seccion2Introducida = document.getElementById("s2");
-                var text3 = document.createTextNode(" " + seccion2Introducida.value);
-                seccion2Original.appendChild(text3);
+                seccion2Original.textContent = "Sección 2: " + seccion2Introducida.value;
             }
         </script>
     </body>
