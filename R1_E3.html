@@ -16,15 +16,15 @@
         <script>
             function agregarParrafo()
             {
-                let nuevoTexto = document.getElementById("nuevoParrafo");
+                let nuevoTexto = document.getElementById("nuevoParrafo").value;
                 if (nuevoTexto == "")
                 {
                     alert("Ingresa párrafo");
                     return;
                 }
                 let texto = document.createElement("ul");
-                parrafo.textContent = nuevoTexto;
-                document.getElementById("lista").appendChild(parrafo);
+                texto.textContent = nuevoTexto;
+                document.getElementById("lista").appendChild(texto);
             }
         </script>
     </body>
